@@ -5,6 +5,8 @@
     "test": "node index.js"
   },
   "peerDependencies": {
-    "@angular/material": "~16"
+    "@angular/material": "~16",
+    "@fontsource-variable/inter": ">= 5",
+    "@fontsource/noto-sans": ">= 5"
   }
 }

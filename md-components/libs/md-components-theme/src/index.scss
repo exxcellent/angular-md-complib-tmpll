@@ -1,0 +1,115 @@
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$exx-lavendula: (
+  50 : #f3ebf3,
+  100 : #e2cde2,
+  200 : #ceaccf,
+  300 : #ba8bbc,
+  400 : #ac72ad,
+  500 : #9d599f,
+  600 : #955197,
+  700 : #8b488d,
+  800 : #813e83,
+  900 : #6f2e72,
+  A100 : #fcbbff,
+  A200 : #fa88ff,
+  A400 : #f755ff,
+  A700 : #f63bff,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )) !default;
+
+$exx-blue: (
+  50 : #e2e9ed,
+  100 : #b6c7d3,
+  200 : #86a2b5,
+  300 : #567d97,
+  400 : #316181,
+  500 : #0d456b,
+  600 : #0b3e63,
+  700 : #093658,
+  800 : #072e4e,
+  900 : #031f3c,
+  A100 : #72acff,
+  A200 : #3f8dff,
+  A400 : #0c6fff,
+  A700 : #0063f1,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )) !default;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+
+
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$md-components-primary: mat.define-palette($exx-blue
+);
+$md-components-accent: mat.define-palette($exx-lavendula);
+
+// The warn palette is optional (defaults to red).
+$md-components-demo-warn: mat.define-palette(mat.$red-palette);
+
+$exx-typography: mat.define-typography-config($font-family: '"Inter Variable", sans-serif') !default;
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$md-components-demo-theme: mat.define-light-theme((color: (primary: $md-components-primary,
+        accent: $md-components-accent,
+        warn: $md-components-demo-warn,
+      ),
+      typography: $exx-typography, ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($md-components-demo-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.exx-theme {
+  .mdc-button--raised {
+    padding: 0 32px;
+  }
+}
