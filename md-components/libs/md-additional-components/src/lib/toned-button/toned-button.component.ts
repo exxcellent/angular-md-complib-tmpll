@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
@@ -6,9 +6,11 @@ import { CommonModule } from '@angular/common';
   selector: 'exx-toned-button, button[exx-toned-button]',
   standalone: true,
   imports: [CommonModule, MatButtonModule],
-  template: `<button mat-raised-button color="primary"><ng-content></ng-content></button>`,
+  template: `<button mat-raised-button [color]="color"><ng-content></ng-content></button>`,
   styleUrls: ['./toned-button.component.scss'],
 })
-export class TonedButtonComponent {}
+export class TonedButtonComponent {
+  @Input() color: 'primary' | 'accent' | 'warn' = 'primary';
+}
 
 
