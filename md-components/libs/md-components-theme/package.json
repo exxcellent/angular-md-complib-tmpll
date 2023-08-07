@@ -1,0 +1,10 @@
+{
+  "name": "@exxcellent/md-components-theme",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "peerDependencies": {
+    "@angular/material": "~16"
+  }
+}
