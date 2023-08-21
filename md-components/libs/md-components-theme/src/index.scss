@@ -113,6 +113,14 @@ body {
     padding: 0 32px;
   }
 
+  .mat-mdc-checkbox {
+    .mdc-label {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+  }
+
   .mat-mdc-text-field-wrapper {
     background-color: deeppink;
   }
