@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { TonedButtonComponent } from '@exxcellent/md-additional-components';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
 
 export interface Task {
@@ -18,7 +19,7 @@ export interface Task {
 
 @Component({
   standalone: true,
-  imports: [RouterModule, MatButtonModule, TonedButtonComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, CommonModule],
+  imports: [RouterModule, MatButtonModule, TonedButtonComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, MatRadioModule, CommonModule],
   selector: 'md-components-root',
   template: `
 <h1>Material Theme Demo</h1>
@@ -29,12 +30,8 @@ export interface Task {
 <exx-toned-button color="accent">Submit</exx-toned-button>
 <div>
 <section class="demo-checkbox-section">
-<mat-checkbox color="primary" [checked]="true">Checked</mat-checkbox>
-<mat-checkbox color="primary" [checked]="true" [disabled]="true">Disabled</mat-checkbox>
-</section>
-</div>
-<div>
-<section class="demo-checkbox-section">
+  <mat-checkbox color="primary" [checked]="true">Checked</mat-checkbox>
+  <mat-checkbox color="primary" [checked]="true" [disabled]="true">Disabled</mat-checkbox>
   <mat-checkbox class="example-margin"
                 [checked]="allComplete"
                 [color]="task.color"
@@ -51,6 +48,16 @@ export interface Task {
       </mat-checkbox>
     </li>
   </ul>
+</section>
+<section class="demo-radiobutton-section">
+  <mat-radio-group
+    aria-labelledby="demo-radio-group-label"
+    class="demo-radio-group"
+    [(ngModel)]="favoriteSeason">
+    <mat-radio-button color="primary" class="demo-radio-button" *ngFor="let season of seasons" [value]="season">
+      {{season}}
+    </mat-radio-button>
+  </mat-radio-group>
 </section>
 <mat-form-field class="example-form-field">
   <mat-label>Clearable input</mat-label>
@@ -69,12 +76,14 @@ export interface Task {
 })
 export class AppComponent {
   value = 'Bob';
+  favoriteSeason: string = 'Spring';
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   task: Task = {
     name: 'Indeterminate',
     completed: false,
     color: 'primary',
     subtasks: [
-      {name: 'Primary', completed: false, color: 'primary'},
+      {name: 'Primary', completed: true, color: 'primary'},
       {name: 'Accent', completed: false, color: 'accent'},
       {name: 'Warn', completed: false, color: 'warn'},
     ],

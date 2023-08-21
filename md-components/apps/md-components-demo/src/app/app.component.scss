@@ -1,6 +1,29 @@
-.demo-checkbox-section {
+@mixin demo-section {
+    display: flex;
+    flex-direction: column;
     margin: 50px 25px;
+}
+
+.demo-checkbox-section {
+    @include demo-section;
+    
     ul {
         list-style-type: none;
+        margin-top: 0;
     }
+}
+
+.demo-radiobutton-section {
+    @include demo-section;
+
+    .demo-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        align-items: flex-start;
+
+        .demo-radio-button {
+            margin: 2px;
+        }
+    }  
 }
