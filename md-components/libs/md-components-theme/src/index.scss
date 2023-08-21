@@ -113,11 +113,21 @@ body {
     padding: 0 32px;
   }
 
+  @mixin input-label {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
   .mat-mdc-checkbox {
     .mdc-label {
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 300;
+      @include input-label;
+    }
+  }
+
+  .mat-mdc-radio-button {
+    .mdc-label {
+      @include input-label;
     }
   }
 
