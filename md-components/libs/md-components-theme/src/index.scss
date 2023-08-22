@@ -131,6 +131,12 @@ body {
     }
   }
 
+  .mat-mdc-card {
+    border: 1px solid #E8EAEA;
+    border-radius: 4px;
+    box-shadow: unset;
+  }
+
   .mat-mdc-text-field-wrapper {
     background-color: deeppink;
   }
