@@ -1,25 +1,18 @@
 import { Component } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { TonedButtonComponent } from '@exxcellent/md-additional-components';
+import { TonedButtonComponent, NewsCardComponent } from '@exxcellent/md-additional-components';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
 
 @Component({
   standalone: true,
-  imports: [RouterModule, MatButtonModule, TonedButtonComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, MatRadioModule, CommonModule],
+  imports: [RouterModule, MatButtonModule, TonedButtonComponent, NewsCardComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, MatRadioModule, MatCardModule, CommonModule],
   selector: 'md-components-root',
   template: `
 <h1>Material Theme Demo</h1>
@@ -59,6 +52,15 @@ export interface Task {
     </mat-radio-button>
   </mat-radio-group>
 </section>
+<section class="demo-card-section">
+  <exx-news-card class="demo-card"
+                 [mediaURL]="news.mediaURL"
+                 [date]="news.date"
+                 [headline]="news.headline"
+                 [text]="news.text"
+                 [meta]="news.meta">
+  </exx-news-card>
+</section>
 <mat-form-field class="example-form-field">
   <mat-label>Clearable input</mat-label>
   <input matInput type="text" [(ngModel)]="value">
@@ -78,7 +80,7 @@ export class AppComponent {
   value = 'Bob';
   favoriteSeason: string = 'Spring';
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
-  task: Task = {
+  task = {
     name: 'Indeterminate',
     completed: false,
     color: 'primary',
@@ -87,6 +89,13 @@ export class AppComponent {
       {name: 'Accent', completed: false, color: 'accent'},
       {name: 'Warn', completed: false, color: 'warn'},
     ],
+  };
+  news = {
+    mediaURL: 'https://picsum.photos/600/200?random=2',
+    date: new Date(),
+    headline: 'Lorem Ipsum dolores mia dela Culpa dela Riga de la Rey garda di Sol',
+    text: 'Lorem Ipsum dolores mia dela ulpa dela rey. Die raga di ruga lorem ipsum dolores ...',
+    meta: 'Konzern <br> 3min. Lesezeit, 513 Wörter',
   };
 
   allComplete: boolean = false;
