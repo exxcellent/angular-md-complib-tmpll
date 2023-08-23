@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 import {
   TonedButtonComponent,
   NewsCardComponent,
@@ -12,13 +11,12 @@ import {
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './component/home/home.component';
 
 @Component({
-  standalone: true,
+  selector: 'md-components-checkbox-demo',
+  templateUrl: './checkbox-demo.component.html',
+  styleUrls: ['./checkbox-demo.component.scss'],
   imports: [
-    HomeComponent,
-    RouterModule,
     MatButtonModule,
     TonedButtonComponent,
     NewsCardComponent,
@@ -30,11 +28,9 @@ import { HomeComponent } from './component/home/home.component';
     MatRadioModule,
     CommonModule,
   ],
-  selector: 'md-components-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  standalone: true,
 })
-export class AppComponent {
+export class CheckboxDemoComponent {
   value = 'Bob';
   favoriteSeason: string = 'Spring';
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];

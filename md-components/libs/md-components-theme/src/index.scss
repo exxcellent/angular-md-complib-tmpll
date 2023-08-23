@@ -140,4 +140,10 @@ body {
   .mat-mdc-text-field-wrapper {
     background-color: deeppink;
   }
+
+  .mat-mdc-standard-chip {
+    border-radius: var(--mdc-chip-container-shape-radius);
+    --mdc-chip-container-shape-family: rounded;
+    --mdc-chip-container-shape-radius: 4px 4px 4px 4px;
+  }
 }
