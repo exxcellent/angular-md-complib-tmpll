@@ -1,0 +1,14 @@
+<div>
+    <label class="range-slider-label" [innerHTML]="label"></label>
+    <div class="range-slider-container">
+        <ng-content select="range-slider-left-content"></ng-content>
+        <mat-slider [min]="min"
+                    [max]="max"
+                    [step]="step">
+            <input matSliderStartThumb>
+            <input matSliderEndThumb>  
+        </mat-slider>
+        <ng-content select="range-slider-right-content"></ng-content>
+    </div>
+    <p *ngIf="helperText" class="range-slider-helper-text" [innerHTML]="helperText"></p>
+</div>
