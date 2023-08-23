@@ -29,6 +29,11 @@
 }
 
 .demo-card-section {
+    @include demo-section;
     max-width: 400px;
-    margin: 50px 30px;
+}
+
+.demo-slider-section {
+    @include demo-section;
+    max-width: 400px;
 }

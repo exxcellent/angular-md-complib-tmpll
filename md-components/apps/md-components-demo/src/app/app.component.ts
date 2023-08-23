@@ -4,15 +4,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { TonedButtonComponent, NewsCardComponent } from '@exxcellent/md-additional-components';
+import { TonedButtonComponent, NewsCardComponent, ContinuousSliderComponent } from '@exxcellent/md-additional-components';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, MatButtonModule, TonedButtonComponent, NewsCardComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, MatRadioModule, MatCardModule, CommonModule],
+  imports: [RouterModule, MatButtonModule, TonedButtonComponent, NewsCardComponent, ContinuousSliderComponent, MatInputModule, FormsModule, MatIconModule, MatCheckboxModule, MatRadioModule, CommonModule],
   selector: 'md-components-root',
   template: `
 <h1>Material Theme Demo</h1>
@@ -61,6 +60,13 @@ import { CommonModule } from '@angular/common';
                  [meta]="news.meta">
   </exx-news-card>
 </section>
+<section class="demo-slider-section">
+  <exx-continuous-slider [iconLeft]="slider.iconLeft"
+                         [iconRight]="slider.iconRight"
+                         [topLabel]="slider.topLabel"
+                         [helperText]="slider.helperText">
+  </exx-continuous-slider> 
+</section>
 <mat-form-field class="example-form-field">
   <mat-label>Clearable input</mat-label>
   <input matInput type="text" [(ngModel)]="value">
@@ -96,6 +102,12 @@ export class AppComponent {
     headline: 'Lorem Ipsum dolores mia dela Culpa dela Riga de la Rey garda di Sol',
     text: 'Lorem Ipsum dolores mia dela ulpa dela rey. Die raga di ruga lorem ipsum dolores ...',
     meta: 'Konzern <br> 3min. Lesezeit, 513 Wörter',
+  };
+  slider = {
+    iconLeft: "volume_mute",
+    iconRight: "volume_up",
+    topLabel: "Top Label",
+    helperText: 'Helper Text'
   };
 
   allComplete: boolean = false;
