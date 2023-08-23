@@ -1,0 +1,35 @@
+.continuous-slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    .mat-mdc-slider {
+        width: 100%;
+    }
+
+    .mat-icon {
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.material-icons {
+            font-size: 32px;
+        }
+    }
+}
+
+.continuous-slider-label {
+    font-weight: 500;
+    font-size: .875rem;
+    color: #03223C;
+}
+
+.continuous-slider-helper-text {
+    display: flex;
+    font-weight: 400;
+    font-size: .75rem;
+    color: #8E9192;
+}
