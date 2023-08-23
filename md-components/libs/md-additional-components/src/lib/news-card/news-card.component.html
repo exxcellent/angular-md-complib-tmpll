@@ -1,0 +1,14 @@
+<mat-card>
+    <img mat-card-image [src]="mediaURL">
+    <mat-card-content>
+        <div class="news-card-date" [innerHTML]="date | date: 'dd.MM.yyyy'"></div>
+        <mat-card-title [innerHTML]="headline"></mat-card-title>
+        <div class="news-card-text" [innerHTML]="text"></div>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="news-card-meta" [innerHTML]="meta"></div>
+        <button mat-icon-button color="primary" (click)="arrowClicked()">
+            <mat-icon>east</mat-icon>
+        </button>
+    </mat-card-actions>
+ </mat-card>

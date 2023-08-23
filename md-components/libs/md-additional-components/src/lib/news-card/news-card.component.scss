@@ -1,0 +1,40 @@
+.mat-mdc-card {
+    border: 1px solid #E8EAEA;
+    border-radius: 4px;
+    box-shadow: unset;
+
+    .mat-mdc-card-content {
+        padding: 24px 24px 0 24px;
+
+        .news-card-date {
+            color: #8E9192;
+            font-weight: 500;
+            font-size: .875rem;
+            line-height: 20px;
+        }
+        .mat-mdc-card-title {
+            padding: 14px 0;
+            font-weight: 500;
+            font-size: 1.125rem;
+            line-height: 28px;
+        }
+        .news-card-text {
+            padding-bottom: 14px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 24px;
+        }
+    }
+
+    .mat-mdc-card-actions {
+        padding: 0 24px 24px 24px;
+        justify-content: space-between;
+
+        .news-card-meta {
+            color: #8E9192;
+            font-weight: 500;
+            font-size: .875rem;
+            line-height: 20px;
+        }
+    }    
+  }
