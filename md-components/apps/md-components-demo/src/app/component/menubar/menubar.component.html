@@ -1,11 +1,35 @@
-<ul class="navigation">
-  <li>
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-  </li>
-  <li>
-    <a routerLink="/domains" routerLinkActive="active">Others Domains</a>
-  </li>
-  <li>
- <a routerLink="/about" routerLinkActive="active">About</a>
-  </li>
-</ul>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Material UI Tutorial</span>
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list >
+      <mat-list-item>
+        <a routerLink="button-demo" mat-button>Button</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="card-demo" mat-button>Card</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="checkbox-demo" mat-button>Checkbox</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="chips-demo" mat-button>Chips</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="input-demo" mat-button>Input</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="radio-demo" mat-button>Radio</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="text-align: center; min-height: 600px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
