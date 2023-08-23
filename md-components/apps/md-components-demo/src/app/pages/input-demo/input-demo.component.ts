@@ -13,9 +13,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'md-components-old-demo',
-  templateUrl: './old-demo.component.html',
-  styleUrls: ['./old-demo.component.scss'],
+  selector: 'md-components-input-demo',
+  templateUrl: './input-demo.component.html',
+  styleUrls: ['./input-demo.component.scss'],
   imports: [
     MatButtonModule,
     TonedButtonComponent,
@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
   ],
   standalone: true,
 })
-export class OldDemoComponent {
+export class InputDemoComponent {
   value = 'Bob';
   favoriteSeason: string = 'Spring';
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];

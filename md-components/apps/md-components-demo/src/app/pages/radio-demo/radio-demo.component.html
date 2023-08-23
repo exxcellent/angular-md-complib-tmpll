@@ -1,0 +1,10 @@
+<div class="exx-theme">
+    <mat-radio-group
+      aria-labelledby="demo-radio-group-label"
+      class="demo-radio-group"
+      [(ngModel)]="favoriteSeason">
+      <mat-radio-button color="primary" class="demo-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
