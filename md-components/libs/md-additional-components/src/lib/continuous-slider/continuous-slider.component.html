@@ -1,0 +1,21 @@
+<div>
+    <label class="continuous-slider-label" [innerHTML]="topLabel"></label>
+    <div class="continuous-slider-container">
+        <mat-icon *ngIf="iconLeft">{{iconLeft}}</mat-icon>
+        <mat-slider [color]="color" 
+                    [disableRipple]="disableRipple"
+                    [disabled]="disabled" 
+                    [discrete]="discrete" 
+                    [displayWith]="displayWith"
+                    [max]="max" 
+                    [min]="min"
+                    [showTickMarks]="showTickMarks"
+                    [step]="step">
+            <input matSliderThumb [(ngModel)]="value">
+        </mat-slider>
+        <mat-icon *ngIf="iconRight">{{iconRight}}</mat-icon>
+        <label *ngIf="!iconRight">{{value}}</label>
+    </div>
+    <p *ngIf="helperText" class="continuous-slider-helper-text" [innerHTML]="helperText"></p>
+</div>
+
