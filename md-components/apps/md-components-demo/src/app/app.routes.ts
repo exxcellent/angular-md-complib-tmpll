@@ -24,5 +24,9 @@ export const appRoutes: Route[] = [
   {
     path: 'card-demo',
     loadComponent: () => import('./pages/card-demo/card-demo.component').then(m => m.CardDemoComponent)
+  },
+  {
+    path: 'sliders-demo',
+    loadComponent: () => import('./pages/sliders-demo/sliders-demo.component').then(m => m.SlidersDemoComponent)
   }
 ];

@@ -31,9 +31,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class CheckboxDemoComponent {
-  value = 'Bob';
-  favoriteSeason: string = 'Spring';
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   task = {
     name: 'Indeterminate',
     completed: false,
@@ -44,21 +41,6 @@ export class CheckboxDemoComponent {
       { name: 'Warn', completed: false, color: 'warn' },
     ],
   };
-  news = {
-    mediaURL: 'https://picsum.photos/600/200?random=2',
-    date: new Date(),
-    headline:
-      'Lorem Ipsum dolores mia dela Culpa dela Riga de la Rey garda di Sol',
-    text: 'Lorem Ipsum dolores mia dela ulpa dela rey. Die raga di ruga lorem ipsum dolores ...',
-    meta: 'Konzern <br> 3min. Lesezeit, 513 Wörter',
-  };
-  slider = {
-    iconLeft: 'volume_mute',
-    iconRight: 'volume_up',
-    topLabel: 'Top Label',
-    helperText: 'Helper Text',
-  };
-
   allComplete: boolean = false;
 
   updateAllComplete() {

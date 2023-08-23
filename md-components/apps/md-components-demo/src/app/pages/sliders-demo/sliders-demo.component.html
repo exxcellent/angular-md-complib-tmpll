@@ -1,0 +1,21 @@
+<div class="exx-theme">
+  <section class="demo-section">
+    <exx-continuous-slider [iconLeft]="contSlider.iconLeft"
+                          [iconRight]="contSlider.iconRight"
+                          [topLabel]="contSlider.topLabel"
+                          [helperText]="contSlider.helperText">
+    </exx-continuous-slider> 
+    <exx-range-slider [label]="rangeSlider.label"
+                      [min]="rangeSlider.min"
+                      [max]="rangeSlider.max"
+                      [step]="rangeSlider.step"
+                      [helperText]="rangeSlider.helperText">
+      <range-slider-left-content>
+        <label>30%</label>
+      </range-slider-left-content>
+      <range-slider-right-content>
+        <label>80%</label>
+      </range-slider-right-content>
+    </exx-range-slider> 
+  </section>
+</div>
