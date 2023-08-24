@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
-
+@use "sass:map";
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -109,8 +109,52 @@ body {
 }
 
 .exx-theme {
-  .mdc-button--raised {
-    padding: 0 32px;
+  .mdc-button {
+    touch-action: none;
+    user-select: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 2px;
+    background: none;
+    cursor: pointer;
+    font-size: 100% !important;
+    border-radius: 0;
+    display: inline-block;
+
+    &.mdc-button--outlined {
+      box-shadow: inset 0 0 0 2px map.get($exx-blue, 500);
+    }
+
+    &:hover {
+      background-color: map.get($exx-blue, 800);
+    }
+
+    &.small {
+      height: 44px;
+      min-width: 91px;
+      max-width: 352px;
+      padding: 10px 20px;
+    }
+    
+    &.medium {
+      height: 52px;
+      min-width: 107px;
+      max-width: 416px;
+      padding: 14px 28px;
+    }
+
+    &.large {
+      height: 56px;
+      min-width: 115px;
+      max-width: 448px;
+      padding: 16px 32px;
+    }
+
+    &.full {
+      height: 56px;
+      width: 100%;
+      padding: 16px 32px;
+    }
   }
 
   @mixin input-label {
