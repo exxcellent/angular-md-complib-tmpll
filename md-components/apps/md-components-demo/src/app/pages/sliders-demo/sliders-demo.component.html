@@ -1,21 +1,50 @@
 <div class="exx-theme">
   <section class="demo-section">
-    <exx-continuous-slider [iconLeft]="contSlider.iconLeft"
-                          [iconRight]="contSlider.iconRight"
-                          [topLabel]="contSlider.topLabel"
-                          [helperText]="contSlider.helperText">
-    </exx-continuous-slider> 
-    <exx-range-slider [label]="rangeSlider.label"
-                      [min]="rangeSlider.min"
-                      [max]="rangeSlider.max"
-                      [step]="rangeSlider.step"
-                      [helperText]="rangeSlider.helperText">
+    <div>
+      <label class="demo-slider-label" [innerHTML]="slider1.label"></label>
+      <div class="demo-slider-container">
+          <mat-slider class="demo-slider" 
+                      [min]="slider1.min"
+                      [max]="slider1.max">
+              <input [(value)]="slider1.value" matSliderThumb> 
+          </mat-slider>
+          <label>{{ slider1.value/100 | percent:'2.0-2' }}</label>
+      </div>
+    </div>
+
+    <exx-continuous-slider [iconLeft]="slider2.iconLeft"
+                           [iconRight]="slider2.iconRight"
+                           [topLabel]="slider2.label"
+                           [helperText]="slider2.helperText">
+    </exx-continuous-slider>
+
+    <exx-range-slider [label]="slider3.label"
+                      [min]="slider3.min"
+                      [max]="slider3.max"
+                      [step]="slider3.step"
+                      [helperText]="slider3.helperText">
       <range-slider-left-content>
-        <label>30%</label>
+        <label>30€</label>
       </range-slider-left-content>
       <range-slider-right-content>
-        <label>80%</label>
+        <label>80€</label>
       </range-slider-right-content>
     </exx-range-slider> 
+
+    <div>
+      <label class="demo-slider-label" [innerHTML]="slider4.label"></label>
+      <div class="demo-slider-container">
+          <mat-icon>home</mat-icon>
+          <mat-slider class="demo-slider"
+                      discrete 
+                      [displayWith]="formatLabel"
+                      [min]="slider4.min"
+                      [max]="slider4.max">
+            <input [(value)]="slider4.value1" matSliderStartThumb>
+            <input [(value)]="slider4.value2" matSliderEndThumb>  
+          </mat-slider>
+          <mat-icon>villa</mat-icon>
+      </div>
+    </div>
   </section>
 </div>
