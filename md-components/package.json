@@ -2,7 +2,10 @@
   "name": "@md-components/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:theme": "nx build md-components-theme",
+    "build:demo": "nx build md-components-demo"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.1.0",

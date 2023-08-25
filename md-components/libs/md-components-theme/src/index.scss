@@ -73,8 +73,7 @@ $exx-blue: (
 
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$md-components-primary: mat.define-palette($exx-blue
-);
+$md-components-primary: mat.define-palette($exx-blue) default;
 $md-components-accent: mat.define-palette($exx-lavendula);
 
 // The warn palette is optional (defaults to red).
@@ -135,7 +134,7 @@ body {
       max-width: 352px;
       padding: 10px 20px;
     }
-    
+
     &.medium {
       height: 52px;
       min-width: 107px;

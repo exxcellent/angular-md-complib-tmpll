@@ -1,4 +1,9 @@
 {
   "name": "md-components-theme",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "build": {
+      "command": "mkdir -p dist/libs/md-components-theme && cp -r libs/md-components-theme dist/libs/md-components-theme"
+    }
+  }
 }
